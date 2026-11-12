@@ -1,6 +1,8 @@
 import Appliction from "../compnents/appliction.jsx";
 import Brands from "../compnents/brands.jsx";
 import About from "../compnents/about.jsx";
+import Contact from "../compnents/contact.jsx";
+
 import {
   HEAD, MUTED, INK, INK_BORDER, PAPER, SURFACE, HAIRLINE,
   BTN_PRIMARY, BTN_GHOST,
@@ -159,6 +161,8 @@ export default function Home() {
         <Brands/>
         {/* About */}
         <About/>
+        {/* Contects */}
+        <Contact/>
 
       </div>
     </div>
