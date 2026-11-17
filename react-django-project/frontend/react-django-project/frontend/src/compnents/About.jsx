@@ -1,7 +1,7 @@
 import { useState } from "react";
 import {
   HEAD, MUTED, INK, ACCENT, SURFACE, SURFACE_SOFT, INK_BORDER, PAPER, BTN_PRIMARY, BTN_GHOST,
-} from "../compnents/theme.js";
+} from "./theme.js";
 
 const PLAY_URL = "https://play.google.com/store/apps/details?id=com.track.threepl"; // ✏️ change if needed
 
