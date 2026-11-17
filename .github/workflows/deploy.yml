@@ -11,17 +11,9 @@ permissions:
   pages: write
   id-token: write
 
-concurrency:
-  group: pages
-  cancel-in-progress: true
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Checkout
@@ -35,18 +27,17 @@ jobs:
           cache-dependency-path: react-django-project/frontend/react-django-project/frontend/package-lock.json
 
       - name: Install dependencies
-        run: npm ci
         working-directory: react-django-project/frontend/react-django-project/frontend
+        run: npm ci
 
       - name: Build
-        run: npm run build
         working-directory: react-django-project/frontend/react-django-project/frontend
+        run: npm run build
 
-      - name: Upload artifact
+      - name: Upload website
         uses: actions/upload-pages-artifact@v3
         with:
           path: react-django-project/frontend/react-django-project/frontend/dist
 
       - name: Deploy
-        id: deployment
         uses: actions/deploy-pages@v4
