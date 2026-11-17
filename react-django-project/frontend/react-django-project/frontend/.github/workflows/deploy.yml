@@ -3,8 +3,7 @@ name: Deploy TrackHub
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -18,10 +17,11 @@ concurrency:
 
 jobs:
   deploy:
+    runs-on: ubuntu-latest
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
@@ -32,17 +32,20 @@ jobs:
         with:
           node-version: 22
           cache: npm
+          cache-dependency-path: react-django-project/frontend/react-django-project/frontend/package-lock.json
 
       - name: Install dependencies
         run: npm ci
+        working-directory: react-django-project/frontend/react-django-project/frontend
 
       - name: Build
         run: npm run build
+        working-directory: react-django-project/frontend/react-django-project/frontend
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: react-django-project/frontend/react-django-project/frontend/dist
 
       - name: Deploy
         id: deployment
