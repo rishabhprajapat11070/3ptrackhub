@@ -5,7 +5,7 @@ import Contact from "../compnents/contact.jsx";
 
 import {
   HEAD, MUTED, INK, INK_BORDER, PAPER, SURFACE, HAIRLINE,
-  BTN_PRIMARY, BTN_GHOST,
+ BTN_GHOST,
 } from "../compnents/theme.js";
 
 const BRAND = "TrackHub"; // change this to your brand name
