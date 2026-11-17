@@ -1,6 +1,6 @@
 import Appliction from "../compnents/appliction.jsx";
 import Brands from "../compnents/brands.jsx";
-import About from "../compnents/about.jsx";
+import About from "../compnents/About.jsx";
 import Contact from "../compnents/contact.jsx";
 
 import {
