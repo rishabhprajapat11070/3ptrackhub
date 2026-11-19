@@ -72,7 +72,7 @@ export default function Appliction() {
               />
               <div>
                 <h3 className={`${HEAD} text-[22px] font-bold leading-tight`}>3PL Track Hub</h3>
-                <p className={`${MUTED} text-[14px]`}>by Telematics Solution</p>
+                <p className={`${MUTED} text-[14px]`}>by 3pltrackhub</p>
               </div>
             </div>
 
